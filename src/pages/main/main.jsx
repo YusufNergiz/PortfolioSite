@@ -28,6 +28,9 @@ const Main = () => {
         y: 0
     })
 
+    // PageTransitionText
+    const [pageTransitionText, setPageTransitionText] = useState("Hi, Im Yussuf ✌");
+
     const randomShapeSelector = () => {
 
         // Function to get a random number
@@ -77,10 +80,10 @@ const Main = () => {
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             gsap.timeline()
-            .fromTo("#pageTransitionRed", {duration: 2.2, scaleX: 0}, {scaleX: 1, transformOrigin:'left', ease: Power4.easeInOut},)
-            .fromTo("#pageTransitionBlack", {duration: 2.2, scaleX: 0}, {scaleX: 1, transformOrigin: 'left', ease: Power4.easeInOut}, .2)
+            .fromTo("#pageTransitionCream", {duration: 2.2, scaleX: 0}, {scaleX: 1, transformOrigin:'left', ease: Power4.easeInOut},)
+            .fromTo("#pageTransitionWhite", {duration: 2.2, scaleX: 0}, {scaleX: 1, transformOrigin: 'left', ease: Power4.easeInOut}, .2)
             .fromTo("#pageTransitionLogo", {duration: 1.6, xPercent: -100, autoAlpha: 0}, {xPercent: 0, autoAlpha: 1, ease: Power4.easeInOut}, .7)
-            .to("#pageTransitionRed", {duration: 2.2, scaleX: 0, transformOrigin: 'right', ease: Power4.easeInOut})
+            .to("#pageTransitionCream", {duration: 2.2, scaleX: 0, transformOrigin: 'right', ease: Power4.easeInOut})
             .to("#pageTransitionLogo", {duration: .2, autoAlpha: 0}, '-=1.2')
             .fromTo(".wrapper", {duration: 1, opacity: 0, y: 100}, {opacity: 1, y: 0, ease: Power4.easeInOut})
             .fromTo("#squirrel", {duration: 1, opacity: 0, y: -100}, {opacity: 1, y: 0, ease: Power4.easeInOut})
@@ -108,11 +111,26 @@ const Main = () => {
         setMouseCoordinates({x: e.clientX, y: e.clientY});
     }
 
+    const navigateToPage = (url, transitionText) => {
+        const ctx = gsap.context(() => {
+            setPageTransitionText(transitionText)
+            gsap.timeline()
+            .fromTo("#pageTransitionCream", {duration: 2.2, scaleX: 0}, {scaleX: 1, transformOrigin:'left', ease: Power4.easeInOut},)
+            .fromTo("#pageTransitionWhite", {duration: 2.2, scaleX: 0}, {scaleX: 1, transformOrigin: 'left', ease: Power4.easeInOut}, .2)
+            .fromTo("#pageTransitionLogo", {duration: 1.6, xPercent: -100, autoAlpha: 0}, {xPercent: 0, autoAlpha: 1, ease: Power4.easeInOut}, .7)
+            .fromTo("#transitionText", {duration: 1.4, opacity: 1}, {opacity: 0})
+            .add(gsap.fromTo(".wrapper", {duration: 1, opacity: 1, x: 0}, {opacity: 0, x: 100, ease: Power4.easeInOut}), 0)
+            .add(gsap.fromTo("#squirrel", {duration: 1, opacity: 1, y: 0}, {opacity: 0, y: -100, ease: Power4.easeInOut}), 0)
+            .add(() => navigate(url))
+        }, loadingPageRef);
+    }
+    
+
     return (
-        <div className={styles.loadingPage} ref={loadingPageRef} onMouseMove={handleMouseMove}>
-            <div className={styles.pageTransitionRed} ref={pageTransitionRedRef} id="pageTransitionRed"></div>
-            <div className={styles.pageTransitionBlack} ref={pageTransitionBlackRef} id="pageTransitionBlack"></div>
-            <div className={styles.pageTransitionLogo} ref={pageTransitionLogoRef} id="pageTransitionLogo"><h1>Hi, Im Yussuf ✌</h1></div>
+        <div ref={loadingPageRef} onMouseMove={handleMouseMove}>
+            <div className={styles.pageTransitionCream} ref={pageTransitionRedRef} id="pageTransitionCream"></div>
+            <div className={styles.pageTransitionWhite} ref={pageTransitionBlackRef} id="pageTransitionWhite"></div>
+            <div className={styles.pageTransitionLogo} ref={pageTransitionLogoRef} id="pageTransitionLogo"><h1 id="transitionText">{pageTransitionText}</h1></div>
             <div className={`${styles.mainPageContainer}`} ref={mainRef} id="mainRef">
                 <div className={styles.squirrelCage}>
                     <div className={styles.squirrel} ref={squirrelRef} id="squirrel">
@@ -123,13 +141,13 @@ const Main = () => {
                     </div>
                 </div>
                 <div id={styles.wrapper} className="col-12 col-lg-6 wrapper" ref={wrapperRef} data-configuration={conf} data-roundness={rnd}>
-                    <motion.div className={styles.shape} layout></motion.div>
-                    <motion.div className={styles.shape}></motion.div>
-                    <motion.div className={styles.shape} onClick={() => navigate('/about')} ref={shapeRef}><h1>About Me</h1></motion.div>
-                    <motion.div className={styles.shape}></motion.div>
-                    <motion.div className={styles.shape}></motion.div>
-                    <motion.div className={styles.shape}></motion.div>
-                    <motion.div className={styles.shape}></motion.div>
+                    <div className={styles.shape}></div>
+                    <div className={styles.shape}></div>
+                    <div className={styles.shape} onClick={() => navigateToPage("/about", "About Me...")} ref={shapeRef}><h1>About Me</h1></div>
+                    <div className={styles.shape} onClick={() => navigateToPage("/projects", "My Projects...")}><h1>Projects</h1></div>
+                    <div className={styles.shape} onClick={() => navigateToPage("/skills", "My Skills...")}><h1>Skills</h1></div>
+                    <div className={styles.shape}></div>
+                    <div className={styles.shape}></div>
                 </div>
                 <a href="https://linkedin.com/in/yussuf-nergiz" target="_blank" className={styles.author} rel="noreferrer">Yussuf Nergiz</a>
             </div>

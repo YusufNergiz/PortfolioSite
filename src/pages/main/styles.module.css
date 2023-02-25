@@ -13,14 +13,14 @@
   background: linear-gradient(0deg, #F5D5AE, #fff) no-repeat right bottom / 0 var(--bg-h);
   transition: background-size 350ms;
   --bg-h: 100%;
-  font-family: var(--main--font--family);
+  font-family: 'Unbounded', cursive;
   font-size: 1.5rem;
   position: absolute;
   bottom: 0;
   right: 0;
   width: fit-content;
   cursor: pointer;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
@@ -43,47 +43,49 @@
     transition: left, top, height, width, border-radius;
     transition-duration: 750ms;
     transition-timing-function: ease-in-out;
-}
-
-#wrapper > .shape:nth-child(1) {
-    background-color: #b30606;
-}
-#wrapper > .shape:nth-child(2) {
-    background-color: #730303;
-}
-#wrapper > .shape:nth-child(3) {
-    background-color: #E0D8B0;
+    font-family: var(--main-font-family);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
-#wrapper > .shape:nth-child(3) > h1 {
-  font-size: 10rem;
+
+#wrapper > .shape h1 {
+  font-size: 5rem;
   display:inline-block; /* inline-block so we can set a width */
   white-space:nowrap; /* keep text one line */
   direction:rtl; /* change direction so the text overflow on the left */
   transition: .5s;
   transform: translateX(-40rem); /* put the value you want here */
   pointer-events:none;
-  color: #000000;
-} 
+  color: #562B08;
+}
 
-#wrapper > .shape:nth-child(3):hover > h1 {
+#wrapper > .shape:hover > h1 {
   transform: translateX(0);
 }
 
+#wrapper > .shape:nth-child(1) {
+    background-color: #5c5b5a;
+}
+#wrapper > .shape:nth-child(2) {
+    background-color: #f7f7f7;
+}
+#wrapper > .shape:nth-child(3) {
+    background-color: #898989;
+}
+
 #wrapper > .shape:nth-child(4) {
-    background-color: #FF0808;
+    background-color: #1f1f1f;
 }
 #wrapper > .shape:nth-child(5) {
-    background-color: #BF0606;
+    background-color: #4d4f51;
 }
 #wrapper > .shape:nth-child(6) {
-    background-color: #990505;
+    background-color: #919191;
 }
 #wrapper > .shape:nth-child(7) {
-    background-color: #3D0000;
+    background-color: #1f1f1f;
 }
 
 /** Shape Positions **/
@@ -345,7 +347,7 @@
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translate(-50%, -50%);
+  transform: translate(-10%, -20%);
   width: 1.5rem;
   height: 1.5rem;
   background: #333;
@@ -434,22 +436,22 @@
 
 /* Loading Page */
 
-.pageTransitionBlack {
+.pageTransitionWhite {
   position: absolute;
   left: 0;
   top: 0;
   height: 100vh;
   width: 100vw;
-  background: #000;
+  background: #e0dedc;
 }
 
-.pageTransitionRed {
+.pageTransitionCream {
   position: absolute;
   left: 0;
   top: 0;
   height: 100vh;
   width: 100vw;
-  background: red;
+  background: #CFB997;
 }
 
 .pageTransitionLogo {
@@ -470,7 +472,7 @@
 
 .pageTransitionLogo h1 {
   font-size: 6rem;
-  font-family: var(--main--font--family);
+  font-family: var(--secondary-font-family);
 }
 
 @media only screen and (max-width: 700px) {

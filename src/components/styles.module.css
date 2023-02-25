@@ -1,0 +1,652 @@
+.container {
+    background: #212121;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---------------- Navbar ------------- */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 10rem;
+    font-size: 2.4rem;
+    letter-spacing: 0.1rem;
+    font-family: var(--main-font-family);
+    color: #464646;
+    font-weight: 700;
+    text-transform: uppercase; 
+}
+
+.navbar div {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media only screen and (max-width: 1000px) {
+    .navbar {
+        font-size: 1rem;
+        padding: 5rem 0;
+    }
+}
+
+.navbarLink:hover {
+    transform: scale(1.2);
+}
+
+.headerContainer {
+    position: relative;
+}
+
+.headerMenu {
+    position: absolute;
+    left: 0;
+    top: 10rem;
+    padding-inline: 10rem;
+
+    letter-spacing: 0.1rem;
+    font-family: var(--main-font-family);
+    font-size: 1.5rem;
+    color: #626262;
+    text-transform: uppercase;
+}
+
+.headerMenu li {
+    z-index: 1;
+    margin: 1rem 0;
+    list-style: none;
+    font-family: var(--main-font-family);
+    font-weight: 600;
+}
+
+.headerMenu a {
+    text-decoration: none;
+    color: #626262;
+    cursor: pointer;
+}
+
+.headerContainer h1 {
+    font-size: 20vw;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--thirtiary-font-family);
+    font-weight: 600;
+    /* transform: translateY(100vh); */
+}
+
+@media only screen and (max-width: 1000px) {
+    .headerMenu {
+        font-size: 1rem;
+        padding: 0;
+    }
+}
+
+/* --------------About Me Text -------------- */
+
+.aboutMeText {
+    color: white;
+    font-size: 4rem;
+    line-height: 1.3;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mobileAboutMeText {
+    color: white;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-family: 'Poppins', sans-serif;
+    display: none;
+}
+
+/* ------------------------------------- */
+
+
+/* ----------- Projects Page ------------ */
+
+.projectWrapper {
+    width: 100%;
+    height: 100vh;
+    background: #212121;
+}
+
+.projectContainer {
+    background-color: #626262;
+    width: 200rem;
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectImage {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectImage img {
+    width: 50rem;
+    height: 23rem;
+}
+
+.projectTitle {
+    font-family: var(--main-font-family);
+    font-size: 3rem;
+    color: white;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.projectStackContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.projectStackContainer h6 {
+    width: 10rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--thirtiary-font-family);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 1000px) {
+    .projectContainer {
+       padding: 5rem;
+    }
+
+    .projectImage img {
+        width: 40rem;
+        height: 10rem;
+    }
+}
+
+/* -------------------------------------- */
+
+@media only screen and (max-width: 1000px) {
+    .aboutMeText {
+        display: none;
+    }
+    .mobileAboutMeText {
+        display: block;
+    }
+
+    .projectImage {
+        width: 100%;
+        height: 100%;
+        transform: translate(0);
+    }
+    
+}
+
+/* --------- CAROUSEL ------------------- */
+
+.imageTrack {
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, -50%); 
+    user-select: none; /* -- Prevent image highlighting -- */
+  }
+  
+  .imageTrack > .carouselImage {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: 100% center;
+    cursor: pointer;
+  }
+
+  .imageTrack .carouselImage:hover {
+    transform: scale(1.05);
+  }
+
+@media only screen and (max-width: 700px) {
+    .imageTrack .carouselImage {
+        width: 60vmin;
+        height: 76vmin;
+    }
+}
+
+/* ---------------------------------------- */
+
+/* ----------- SKILLS PAGE -------------- */
+
+.skillsContainer {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.skillsContainer .skillImage {
+    position: absolute;
+    right: 0;
+    top: 20rem;
+    width: 50%;
+    height: 60%;
+    background-size: cover;
+    border-radius: 2rem;
+    background-image: url("../images/HC.jpg");
+    background-repeat: cover;
+    background-position: center;
+    transform: translateX(0);
+}
+
+.skillsContainer .skillImage h1 {
+    font-family: var(--secondary--font--family);
+    font-size: 10rem;
+    font-weight: 700;
+    position: absolute;
+    top: -12rem;
+    color: white;
+}
+
+.skillsContainer .skillImage h1:nth-child(2) {
+    top: -5rem;
+    left: -5rem;
+}
+
+.skillsContainer h1 {
+    position: absolute;
+    font-family: var(--secondary--font--family);
+    font-size: 6rem;
+}
+
+.skillsList {
+    position: absolute;
+    top: 10rem;
+    left: 3rem;
+    height: 50%;
+    width: 60%;
+}
+
+.skillsList li {
+    font-family: var(--thirtiary-font-family);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: rgb(123, 122, 122);
+    margin: 1rem;
+}
+
+.skillsList h3 {
+    color: white;
+    margin: 2rem;
+    font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .skillsContainer {
+        height: 80%;
+    }
+
+    .skillsContainer .skillImage {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .skillsContainer .skillImage h1 {
+        font-size: 5rem;
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .skillsContainer .skillImage h1:nth-child(2) {
+        position: relative;
+        top: -2rem;
+        left: -3rem;
+    }
+
+    .skillsList h3 {
+        font-size: 2rem;
+    }
+
+    .skillsList {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+}
+/* -------------------------------------- */
+
+/* ---------------- Projects --------------- */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .card {
+    position: relative;
+    display: block;
+    height: 100%;  
+    border-radius: 1rem;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  
+  .card__image {      
+    width: 63rem;
+    height: 57rem;
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    .card__image {
+      width: 100%;
+      height: 30rem;
+    }
+  }
+  
+  .card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;      
+    border-radius: calc(var(--curve) * 1px);    
+    background-color: var(--surface-color);      
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card:hover .card__overlay {
+    transform: translateY(0);
+  }
+  
+  .card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;    
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;      
+    z-index: 1;
+  }
+  
+  .card__arc path {
+    fill: var(--surface-color);
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+  }       
+  
+  .card:hover .card__header {
+    transform: translateY(0);
+  }
+  
+  .card__thumb {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;      
+    border-radius: 50%;      
+  }
+  
+  .card__title {
+    font-size: 2rem;
+    margin: 0 0 .3em;
+    color: #464646;
+  }
+  
+  .card__tagline {
+    display: block;
+    margin: 1em 0;
+    font-family: "MockFlowFont";  
+    font-size: .8em; 
+    color: #D7BDCA;  
+  }
+  
+  .card__status {
+    font-size: 1.2rem;
+    color: #212121;
+    margin-inline: 0.5rem;
+  }
+  
+  .card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #212121;
+    font-family: var(--main-font-family);   
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+/* --------------------------------------- */
+
+
+/* ---------------- Experience --------------------- */
+
+.experienceCompany {
+}
+
+.experienceCompany h1 {
+    margin-block: 2rem;
+    color: white;
+    font-family: var(--main-font-family);
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 1000px) {
+    .experienceCompany h1 {
+        font-size: 4rem;
+    }
+}
+
+.experienceInfo {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    position: absolute;
+    opacity: 1;
+}
+
+.experienceInfo h3, p, h6, ul,
+.experienceListItem {
+    font-weight: 600;
+    font-family: var(--main-font-family);
+}
+
+.experienceInfo h3 {
+    color: white;
+    font-size: 1.7rem;
+}
+
+.experienceInfo p {
+    padding-top: 2rem;
+    color: #626262;
+    font-size: 1.2rem;
+}
+
+.experienceInfo h6 {
+    color: #626262;
+    font-size: 1.2rem;
+}
+
+.experienceListItem {
+    padding-top: 2rem;
+    color: #8b8b8b;
+    font-size: 1.4rem;
+}
+
+/* -------------------------------------------------- */
+
+/* Footer */
+
+.footerContainer {
+    background: #f5f0ec;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.footerContainer a {
+    text-decoration: none;
+    color: inherit;
+    padding-block: 1rem;
+}
+.footerContainer a > h1 {
+    font-family: var(--main-font-family);
+    font-size: 3rem;
+    font-weight: 600;
+    background: linear-gradient(0deg, #6e6e6e, #8b8b8b) no-repeat right bottom / 0 var(--bg-h);
+    transition: background-size 350ms;
+    --bg-h: 100%;
+    width: fit-content;
+    color: black;
+    text-decoration: none;
+}
+
+.footerContainer a > h1:where(:hover, :focus-visible) {
+    background-size: 100% var(--bg-h);
+    background-position-x: left;  
+    color: #000;
+    text-decoration: none;
+  }
+
+.footerContainer h3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.footerContainer h3:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+.footerCurtain {
+    background: #212121;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100vh);
+}
+
+@media (max-width: 1000px) {
+    .footerContainer h3 {
+      padding: 0.25em 0.75em;
+    }
+
+    .footerContainer {
+        height: 200vh;
+    }
+
+    .footerCurtain {
+        transform: translateY(250vh);
+    }
+  }
+
+
+/* -------------- */
+
+/* Contact Form */
+
+.contactFormContainer {
+    padding: 5rem;
+}
+
+.contactFormContainer h1 {
+    font-family: var(--main-font-family);
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.contactFormContainer input {
+    outline: 0;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid black;
+    padding-block: 2rem;
+    font-family: var(--thirtiary-font-family);
+    font-size: 2rem;
+}
+
+.contactFormContainer textarea {
+    outline: 0;
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    padding-block: 2rem;
+    margin-block: 2rem;
+    font-family: var(--thirtiary-font-family);
+    font-size: 2rem;
+}
+
+.sendEmailButton {
+    font-family: var(--main-font-family);
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.sendEmailButton:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+@media (min-width: 1000px) {
+  .sendEmailButton {
+    padding: 0.25em 0.75em;
+  }
+}
+
+/* ------------- */
+

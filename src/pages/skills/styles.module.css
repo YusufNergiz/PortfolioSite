@@ -1,0 +1,41 @@
+.curtain {
+    width: 100%;
+    height: 100vh;
+    background: #212121;
+    position: absolute;
+    transform: translateX(0);
+    z-index: 2;
+}
+
+.skillContainer {
+    background: #212121;
+    height: 50vh;
+    width: 100%;
+    position: relative;
+}
+
+.skillContainer h5, h1 {
+    font-family: var(--thirtiary-font-family);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.skillContainer h5 {
+    font-size: 5rem;
+}
+
+.skillContainer h1 {
+    font-size: 20rem;
+    transform: translateX(0);
+}
+
+@media only screen and (max-width: 1000px) {
+    .skillContainer {
+        border-bottom: 2px solid white;
+    }
+
+    .skillContainer h5 {
+        font-size: 3rem;
+    }
+}

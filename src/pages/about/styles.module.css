@@ -1,0 +1,61 @@
+
+
+.pageTransitionBlack {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: #f5f0ec;
+}
+
+.text {
+    font-family: var(--secondary--font--family);
+    color: white;
+    font-size: 7rem;
+    position: relative;
+    font-weight: 400;
+}
+
+.smallText {
+    font-family: var(--main--font--family);
+    color: rgb(208, 205, 205);
+    font-size: 2rem;
+}
+
+.nameTextBox {
+    position: absolute;
+    bottom: 2rem;
+    right: 3rem;
+}
+
+.curtainBottom,
+.curtainTop {
+    position: absolute;
+    width: 100vw;
+    height: 50vh;
+    background: #212121;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.curtainTop {
+    left: 0;
+    top: 0;
+    transform: translateY(-50vh);
+}
+
+.curtainBottom {
+    left: 0;
+    bottom: 0;
+    transform: translateY(50vh);
+}
+
+.textBoxContainer {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media only screen and (max-width: 700px) {
+    .curtainTop {
+        transform: translateY(-130vh);
+    }
+}
+
