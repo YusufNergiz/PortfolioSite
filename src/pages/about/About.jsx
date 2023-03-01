@@ -13,7 +13,6 @@ import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Tv from "./Tv";
-gsap.registerPlugin(ScrollTrigger);
 
     const About = () => {
 
@@ -24,6 +23,8 @@ gsap.registerPlugin(ScrollTrigger);
         // Gsap Load Animations\
 
         useEffect(() => {
+
+            gsap.registerPlugin(ScrollTrigger);
 
             const myText = new SplitType("#textBox")
             
@@ -36,7 +37,8 @@ gsap.registerPlugin(ScrollTrigger);
                     start: 0,
                     end: '+=50%',
                     scrub: true,
-                    scroller: "#main-container"
+                    scroller: "#main-container",
+                    lazy: false  
                     }
                 })
     
@@ -48,7 +50,8 @@ gsap.registerPlugin(ScrollTrigger);
                     start: 0,
                     end: '+=50%',
                     scrub: true,
-                    scroller: "#main-container"
+                    scroller: "#main-container",
+                    lazy: false  
                     }
                 })
     
@@ -61,7 +64,8 @@ gsap.registerPlugin(ScrollTrigger);
                     start: 0,
                     end: '+=50%',
                     scrub: true,
-                    scroller: "#main-container"
+                    scroller: "#main-container",
+                    lazy: false  
                 }
                 })
             })
