@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'professionalFont';
   src: url(../public/fonts/FontsFree-Net-SFProDisplay-Medium.ttf) format('truetype');
@@ -38,6 +37,11 @@ body {
   font-size: 1.6rem;
 }
 
+iframe {
+  width: 100%;
+  height: 100vh;
+}
+
 /* Split Text */
 
 .lineChildren {
@@ -55,6 +59,11 @@ body {
 }
 
 /*  */    
+
+
+
+
+
 
 
 

@@ -203,3 +203,60 @@
     font-family: var(--main-font-family);
 }
 /* ----------- */
+
+/* Carousel */
+
+.projectContainer {
+    width: 100%;
+    height: 100vh;
+    background: #212121;
+    position: relative;
+    padding-block: 5rem;
+}
+
+.projectWrapper {
+    position: relative;
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+}
+
+.projectContainer h1 {
+    font-family: var(--main-font-family);
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+.projectContainer img {
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.projectContainer p {
+    position: absolute;
+    font-family: var(--main-font-family);
+    font-weight: 600;
+    font-size: 2rem;
+    color: white;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .projectWrapper {
+        width: 100%;
+        height: 50%;
+    }
+
+    .projectContainer p {
+        width: 100%;
+    }
+}
+
+/* ------------- */

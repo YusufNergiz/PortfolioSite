@@ -29,7 +29,7 @@ const ContactForm = () => {
                 </div>
                 <input type="text" placeholder="Subject"/>
                 <textarea name="message" id="" cols="30" rows="5" placeholder="Message"></textarea>
-                <input type="submit" value="Send" className={styles.sendEmailButton}/>
+                <input type="submit" defaultValue="Send" className={styles.sendEmailButton}/>
             </form>
         </div>
     );

@@ -1,0 +1,25 @@
+img {
+    width: 50%;
+    height: 50%;
+}
+
+.certContainer {
+    overflow: hidden;
+    position: relative;
+}
+
+.curtain {
+    background: #212121;
+    position: absolute;
+    transform: translateX(0);
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1000px) {
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}

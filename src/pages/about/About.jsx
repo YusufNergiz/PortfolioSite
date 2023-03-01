@@ -13,6 +13,7 @@ import useLocoScroll from "../../hooks/useLocoScroll";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Tv from "./Tv";
 gsap.registerPlugin(ScrollTrigger);
 
     const About = () => {
@@ -80,7 +81,10 @@ gsap.registerPlugin(ScrollTrigger);
                     </div>
                 </div>
                 <AboutMeText />
-                <Projects />
+                <div style={{height: "100vh", width: "100%", position: "relative", background: "#212121"}}>
+                    <h1 className={styles.tvHeader}>Check out some of my Projects</h1>
+                    <Tv />
+                </div>
                 <Skills />
                 <Experience />
                 <Footer />

@@ -39,3 +39,8 @@
         font-size: 3rem;
     }
 }
+
+.lineChildren {
+    opacity: 1;
+    transform: translateY(20vh);
+}

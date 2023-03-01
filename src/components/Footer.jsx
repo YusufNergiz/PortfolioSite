@@ -41,9 +41,9 @@ const Footer = () => {
                 <section className={`row border border-3 ${styles.footerContainer}`}>
                         <div className="col-12 col-md-6 d-flex justify-content-center align-items-center flex-column">
                             <a href="/"><h1>Main</h1></a>
-                            <a href="#"><h1>Projects</h1></a>
-                            <a href="#"><h1>Skills</h1></a>
-                            <a href="#"><h1>Experience</h1></a>
+                            <a href="/projects"><h1>Projects</h1></a>
+                            <a href="/skills"><h1>Skills</h1></a>
+                            <a href="/resume"><h1>Resume</h1></a>
                             <div className="d-flex gap-3">
                                 <a href="https://www.linkedin.com/in/yussuf-nergiz" target="_blank"><h3>Linkedin</h3></a>
                                 <a href="https://github.com/YusufNergiz" target="_blank"><h3>Github</h3></a>

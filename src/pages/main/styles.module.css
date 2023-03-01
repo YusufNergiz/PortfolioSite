@@ -481,3 +481,11 @@
   }
 }
 /* ------------ */
+
+.colorLinks {
+  position: absolute;
+  height: 10rem;
+  width: 15rem;
+  left: 2rem;
+  top: 2rem;
+}

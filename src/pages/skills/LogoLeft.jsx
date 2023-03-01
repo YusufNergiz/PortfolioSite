@@ -12,19 +12,17 @@ const LogoLeft = ({icon, description, color}) => {
         const ctx = gsap.context(() => {
             gsap.from("#icon", {
                 duration: 3,
-                xPercent: 100,
+                xPercent: -300,
                 ease: Power4.ease,
                 scrollTrigger: {
                     trigger: mainRef.current,
                     start: "top center",
                     end: "bottom bottom",
-                    scrub: true,
-                    stagger: 1,
+                    scrub: 1,
                     scroller: "#main-container",
-                    markers: true
                 }
             })
-        }, mainRef)
+        }, mainRef)  
 
         return () => ctx.revert();
 

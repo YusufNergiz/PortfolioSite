@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import styles from "./styles.module.css";
 import { gsap, Power4 } from "gsap";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+
+import {FaCube} from "react-icons/fa";
 
 const Main = () => {
 
@@ -140,14 +141,21 @@ const Main = () => {
                         </div>
                     </div>
                 </div>
+                <div className={styles.colorLinks}>
+                    <h3 style={{color: "#1f1f1f"}}><FaCube /> Projects</h3>
+                    <h3 style={{color: "#5c5b5a"}}><FaCube /> Skills</h3>
+                    <h3 style={{color: "#f7f7f7"}}><FaCube /> Resume</h3>
+                    <h3 style={{color: "#919191"}}><FaCube /> Certificates</h3>
+                    <h3 style={{color: "#898989"}}><FaCube /> About</h3>
+                </div>
                 <div id={styles.wrapper} className="col-12 col-lg-6 wrapper" ref={wrapperRef} data-configuration={conf} data-roundness={rnd}>
-                    <div className={styles.shape}></div>
-                    <div className={styles.shape}></div>
+                    <div className={styles.shape} onClick={() => navigateToPage("/skills", "My Skills...")}><h1>Skills</h1></div>
+                    <div className={styles.shape} onClick={() => navigateToPage("/resume", "My CV...")}><h1>Resume</h1></div>
                     <div className={styles.shape} onClick={() => navigateToPage("/about", "About Me...")} ref={shapeRef}><h1>About Me</h1></div>
                     <div className={styles.shape} onClick={() => navigateToPage("/projects", "My Projects...")}><h1>Projects</h1></div>
                     <div className={styles.shape} onClick={() => navigateToPage("/skills", "My Skills...")}><h1>Skills</h1></div>
-                    <div className={styles.shape}></div>
-                    <div className={styles.shape}></div>
+                    <div className={styles.shape} onClick={() => navigateToPage("/certificates", "My Certificates...")}><h1>Certificates</h1></div>
+                    <div className={styles.shape} onClick={() => navigateToPage("/projects", "My Projects...")}><h1>Projects</h1></div>
                 </div>
                 <a href="https://linkedin.com/in/yussuf-nergiz" target="_blank" className={styles.author} rel="noreferrer">Yussuf Nergiz</a>
             </div>

@@ -1,84 +1,81 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from 'react'
 import styles from "./styles.module.css";
-import youtubeClone from "../images/ytbClone.PNG";
-import alemMedicus from "../images/alemmed-mainPage.PNG";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import innLab from "../images/innLab-mainPage.PNG"
+import alemMed from "../images/alemmed-mainPage.PNG";
 import mazmun from "../images/mazmun-mainPage.png";
 import mugalim from "../images/mugalim-mainPage.PNG";
-import innLab from "../images/innLab-mainPage.PNG";
-import { useNavigate } from "react-router-dom";
+import ytbClone from "../images/ytbClone.PNG";
 
-const Carousel = () => {
 
-    const trackRef = useRef(null);
-    const imageRef = useRef();
+function Carousel() {
 
-    const navigate = useNavigate();
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true
+    };
 
-    const [projects, setProjects] = useState([{image: youtubeClone, link: "https://github.com/YusufNergiz/YoutubeClone"}, {image: alemMedicus, link: "https://alemmedicus.kz/main"}, {image: mazmun, link: "https://github.com/YusufNergiz/Mazmun"}, {image: mugalim, link: "https://github.com/YusufNergiz/Mugalim-Academy"}, {image: innLab, link: "https://innlab.kz/page"}])
+    const projectList = [
+        {
+            description: "Built the clone of the Landing page which helped me dive deeper into CSS and HTML",
+            url: "https://innlab.kz/page",
+            image: innLab,
+            title: "Software Company Landing Page",
+            stack: ["Angular", "Bootstrap", "HTML", "CSS"]
+        },
+        {
+            description: "Built a University News Site both Front-End and Back-End with admin page",
+            url: "https://alemmedicus.kz/main",
+            image: alemMed,
+            title: "Medical University Scholaship Site",
+            stack: ["Angular", "Firebase", "Bootstrap", "HTML", "CSS"]
+        },
+        {
+            description: "Built a Clone of an Online BookStore based in Kazakhstan both Front-End and Back-End with authentication using Fireabase",
+            url: "https://github.com/YusufNergiz/Mazmun",
+            image: mazmun,
+            title: "Online Bookstore",
+            stack: ["Angular", "Firebase", "Bootstrap", "HTML", "CSS"]
+        },
+        {
+            description: "Built the Clone of an Academy's Landing Page",
+            url: "https://mugalim.academy/",
+            image: mugalim,
+            title: "Education Center Landing Page",
+            stack: ["Angular", "Bootstrap", "HTML", "CSS"]
+        },
+        {
+            description: "Built a Youtube Clone using a non SQL Back-End, MongoDB",
+            url: "https://github.com/YusufNergiz/YoutubeClone",
+            image: ytbClone,
+            title: "Youtube Clone",
+            stack: ["React", "Firebase", "Node.js", "Express", "MongoDB", "Bootstrap", "HTML", "CSS"]
+        },
+    ]
 
-        const handleOnDown = e => {
-            trackRef.current.dataset.mouseDownAt = e.clientX;
-        };
-
-        const handleOnUp = () => {
-            trackRef.current.dataset.mouseDownAt = "0";
-            trackRef.current.dataset.prevPercentage = trackRef.current.dataset.percentage;
-        };
-
-        const handleOnMove = e => {
-            if (trackRef.current.dataset.mouseDownAt === "0") return;
-
-            const mouseDelta = parseFloat(trackRef.current.dataset.mouseDownAt) - e.clientX,
-            maxDelta = window.innerWidth / 2;
-
-            const percentage = (mouseDelta / maxDelta) * -100,
-            nextPercentageUnconstrained = parseFloat(trackRef.current.dataset.prevPercentage) + percentage,
-            nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-
-            trackRef.current.dataset.percentage = nextPercentage;
-
-            trackRef.current.animate({
-            transform: `translate(${nextPercentage}%, -50%)`
-            }, { duration: 1200, fill: "forwards" });
-
-            for (const image of trackRef.current.getElementsByClassName("image")) {
-            image.animate({
-                objectPosition: `${100 + nextPercentage}% center`
-            }, { duration: 1200, fill: "forwards" });
-            }
-        };
-
-        useEffect(() => {
-            window.onmousedown = e => handleOnDown(e);
-            window.ontouchstart = e => handleOnDown(e.touches[0]);
-            window.onmouseup = e => handleOnUp(e);
-            window.ontouchend = e => handleOnUp(e.touches[0]);
-            window.onmousemove = e => handleOnMove(e);
-            window.ontouchmove = e => handleOnMove(e.touches[0]);
-
-            return () => {
-            window.onmousedown = null;
-            window.ontouchstart = null;
-            window.onmouseup = null;
-            window.ontouchend = null;
-            window.onmousemove = null;
-            window.ontouchmove = null;
-            };
-        }, []);
-
-        const openProjectLink = (link) => {
-            window.open(link, "_blank")
-        }
-
-    return (
-        <>
-            <div ref={trackRef} data-mouse-down-at="0" data-prev-percentage="0" className={styles.imageTrack}>
-                {projects.map(project => (
-                    <img className={`${styles.carouselImage} image`} ref={imageRef} src={project.image} draggable="false" onClick={() => openProjectLink(project.link)}/>
-               ))}
-            </div>
-        </>
-    );
+  return (
+    <div className={styles.carouselContainerProjects}>
+        <div className={styles.projectContainerProjects}>
+            <Slider {...settings}>
+                {projectList.map(project => (
+                    <a href={project.url} target="_blank" rel="noreferrer">
+                        <div className={styles.project}>
+                        <h1 className='mt-5'>{project.title}</h1>
+                        <img src={project.image} alt="Project" />
+                    </div>
+                    </a>
+                ))}
+            </Slider>
+        </div>
+    </div>
+  )
 }
 
-export default Carousel;
+export default Carousel

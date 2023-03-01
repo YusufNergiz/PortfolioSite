@@ -20,7 +20,7 @@ const GithubRepo = ({name, description, html_url, stargazersCount, watchersCount
                     trigger: repoRef.current,
                     start: "top center",
                     end: "bottom bottom",
-                    scrub: true,
+                    scrub: 1,
                     scroller: "#main-container",
                 }
             })

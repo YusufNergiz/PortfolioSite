@@ -1,0 +1,52 @@
+.mobileResume {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    flex-direction: column;
+}
+
+.mobileResume h1, h3, button {
+    padding-top: 2rem;
+}
+
+.button {
+    margin-top: 2rem;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: var(--main-font-family);
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+}
+
+@media only screen and (max-width: 700px) {
+    .resume {
+        display: none;
+    }
+
+    .mobileResume {
+        display: flex;
+    }
+}

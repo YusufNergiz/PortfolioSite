@@ -27,7 +27,6 @@ const GithubStats = () => {
             await axios.get(`https://api.github.com/users/yusufnergiz/repos?${params}`)
                 .then(response => {
                     setGithubRepos(response.data)
-                    console.log(response.data)
                 })
                 .catch(error => {
                     toast.error("Could not fetch Github Data!")
