@@ -23,9 +23,9 @@ const Header = ({headerText}) => {
     return (
         <section className={styles.headerContainer}>
             <ul className={styles.headerMenu}>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/resume">Resume</a></li>
+                <li><a href="/projects">Projects</a></li>
             </ul>
             <div style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%"}}>
                 <h1 id="headerText" style={{color: "#212121"}}>{headerText}</h1>
