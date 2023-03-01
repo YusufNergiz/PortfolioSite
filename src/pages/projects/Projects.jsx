@@ -8,6 +8,7 @@ import { useRef } from "react";
 import useLocoScroll from "../../hooks/useLocoScroll";
 import GithubStats from "./GithubStats";
 import Slider from "react-slick";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import innLab from "../../images/innLab-mainPage.PNG"
 import alemMed from "../../images/alemmed-mainPage.PNG";
@@ -72,6 +73,8 @@ const Projects = () => {
 
     useEffect(() => {
 
+        gsap.registerPlugin(ScrollTrigger);
+
         const ctx = gsap.context(() => {
             gsap.from("#curtain", {
                 y: 0,
@@ -105,19 +108,6 @@ const Projects = () => {
         return () => ctx.revert();
 
     }, [])
-
-
-    const CustomPrevArrow = (props) => (
-        <div {...props}>
-          <i className="fa fa-chevron-left"></i>
-        </div>
-      );
-      
-      const CustomNextArrow = (props) => (
-        <div {...props}>
-          <i className="fa fa-chevron-right"></i>
-        </div>
-      );
 
     return (
         <>

@@ -3,7 +3,7 @@ import resumePDF from "../../images/YussufNergizResume.pdf";
 import styles from "./styles.module.css";
 
 function Resume() {
-
+  
   const downloadResume = () => {
     window.open(resumePDF)
   }

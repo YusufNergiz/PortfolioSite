@@ -8,6 +8,7 @@ import useLocoScroll from "../../hooks/useLocoScroll";
 import LogoLeft from "./LogoLeft";
 import LogoRight from "./LogoRight";
 import styles from "./styles.module.css";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import {FaReact, FaAngular, FaNodeJs, FaBootstrap, FaGitAlt} from "react-icons/fa"
 import { SiExpress, SiFirebase, SiMongodb, SiRedux, SiTailwindcss, SiTypescript, SiGreensock} from "react-icons/si"
@@ -16,6 +17,8 @@ import Footer from "../../components/Footer";
 const Skills = () => {
 
     useLocoScroll();
+
+    gsap.registerPlugin(ScrollTrigger);
 
     const mainRef = useRef();
 

@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';
 import styles from "./styles.module.css";
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 import pythonCert from "../../images/pythonCert.jpg";
 import gitCert from "../../images/gitCert.png";
@@ -34,6 +35,8 @@ function Certificates() {
     ]
 
     useEffect(() => {
+
+        gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {
             gsap.from("#header", {
