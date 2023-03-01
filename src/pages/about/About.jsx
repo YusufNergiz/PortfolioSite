@@ -14,15 +14,17 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Tv from "./Tv";
 
-    const About = () => {
+const About = () => {
 
-        useLocoScroll();
+        // useLocoScroll();
 
         const mainRef = useRef();
 
         // Gsap Load Animations\
 
         useEffect(() => {
+
+            console.log("ScrollTrigger", ScrollTrigger)
 
             gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +39,7 @@ import Tv from "./Tv";
                     start: 0,
                     end: '+=50%',
                     scrub: true,
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                     lazy: false  
                     }
                 })
@@ -50,7 +52,7 @@ import Tv from "./Tv";
                     start: 0,
                     end: '+=50%',
                     scrub: true,
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                     lazy: false  
                     }
                 })
@@ -64,7 +66,7 @@ import Tv from "./Tv";
                     start: 0,
                     end: '+=50%',
                     scrub: true,
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                     lazy: false  
                 }
                 })

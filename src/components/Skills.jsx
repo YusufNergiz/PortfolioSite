@@ -7,8 +7,6 @@ const Skills = () => {
 
     const skillsContainerRef = useRef(null);
 
-    
-
     useEffect(() => {
         const ctx = gsap.context(() => {
 

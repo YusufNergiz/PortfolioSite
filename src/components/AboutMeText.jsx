@@ -26,7 +26,7 @@ const AboutMeText = () => {
                     start: "top center",
                     end: "+=100",
                     toggleActions: "play none none reverse",
-                    scroller: "#main-container" 
+                    // scroller: "#main-container" 
                 }
             })   
         }, containerRef)
