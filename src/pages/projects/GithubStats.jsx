@@ -15,6 +15,7 @@ const GithubStats = () => {
     const containerRef = useRef();
     const repoRef = useRef();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const params = new URLSearchParams({
         sort: 'created',
         per_page: 10,

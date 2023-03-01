@@ -4,7 +4,6 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useEffect } from "react";
-import SplitType from "split-type";
 import AboutMeText from "../../components/AboutMeText";
 import Experience from "../../components/Experience";
 import Skills from "../../components/Skills";
@@ -19,8 +18,6 @@ const About = () => {
         useLocoScroll();
 
         const mainRef = useRef();
-
-        // Gsap Load Animations\
 
         useEffect(() => {
 
