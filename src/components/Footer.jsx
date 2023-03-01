@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ContactForm from "./ContactForm";
 import styles from "./styles.module.css";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const Footer = () => {
 
@@ -13,6 +14,9 @@ const Footer = () => {
 
 
     useEffect(() => {
+
+        gsap.registerPlugin(ScrollTrigger);
+
         const ctx = gsap.context(() => {
             gsap.from("#footerCurtain", {
                 y: 0,

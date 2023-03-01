@@ -18,11 +18,12 @@ const Skills = () => {
 
     useLocoScroll();
 
-    gsap.registerPlugin(ScrollTrigger);
-
     const mainRef = useRef();
 
     useEffect(() => {
+
+        gsap.registerPlugin(ScrollTrigger);
+
         const ctx = gsap.context(() => {
             gsap.from("#curtain", {
                 duration: 10,

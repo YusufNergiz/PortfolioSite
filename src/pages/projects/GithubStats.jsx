@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 import {FaUsers, FaWindowRestore, FaUserFriends, FaXRay} from "react-icons/fa"
 import gsap, { Power4 } from "gsap";
 import GithubRepo from "./GithubRepo";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const GithubStats = () => {
 
@@ -23,6 +24,9 @@ const GithubStats = () => {
     })
 
     useEffect(() => {
+
+        gsap.registerPlugin(ScrollTrigger);
+
         const fetchGithubData = async () => {
             await axios.get(`https://api.github.com/users/yusufnergiz/repos?${params}`)
                 .then(response => {

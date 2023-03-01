@@ -3,12 +3,16 @@ import styles from "./styles.module.css";
 import { FaEye, FaStar } from "react-icons/fa";
 import { TbGitFork } from "react-icons/tb"
 import gsap, { Power4 } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const GithubRepo = ({name, description, html_url, stargazersCount, watchersCount, forks}) => {
 
     const repoRef = useRef();
 
     useEffect(() => {
+
+        gsap.registerPlugin(ScrollTrigger);
+
         const ctx = gsap.context(() => {
             gsap.from(repoRef.current, {
                 opacity: 0,

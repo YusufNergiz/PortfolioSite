@@ -1,12 +1,16 @@
 import gsap, { Power4 } from "gsap";
 import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.css";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const LogoRight = ({icon, description, color}) => {
 
     const mainRef = useRef();
 
     useEffect(() => {
+
+        gsap.registerPlugin(ScrollTrigger);
+
         const ctx = gsap.context(() => {
             gsap.from("#icon", {
                 duration: 3,

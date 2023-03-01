@@ -3,14 +3,14 @@ import styles from "./styles.module.css";
 import { gsap, Power4 } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "../utils/Split3.min.js"
-gsap.registerPlugin(ScrollTrigger);
-
 
 const AboutMeText = () => {  
 
     const containerRef = useRef();
     
     useEffect(() => {
+
+        gsap.registerPlugin(ScrollTrigger);
 
         const myText = new SplitText("#aboutMeText", {type: 'lines', linesClass: 'lineChildren'})
 
@@ -26,7 +26,7 @@ const AboutMeText = () => {
                     start: "top center",
                     end: "+=100",
                     toggleActions: "play none none reverse",
-                    // scroller: "#main-container" 
+                    scroller: "#main-container" 
                 }
             })   
         }, containerRef)

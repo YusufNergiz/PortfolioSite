@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import { gsap, Power4 } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const Experience = () => {
 
@@ -25,6 +26,9 @@ const Experience = () => {
 
 
     useEffect(() => {
+
+        gsap.registerPlugin(ScrollTrigger);
+
         const ctx = gsap.context(() => {
           const tl = gsap.timeline()
             .from("#experienceInfo", {

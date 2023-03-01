@@ -16,15 +16,13 @@ import Tv from "./Tv";
 
 const About = () => {
 
-        // useLocoScroll();
+        useLocoScroll();
 
         const mainRef = useRef();
 
         // Gsap Load Animations\
 
         useEffect(() => {
-
-            console.log("ScrollTrigger", ScrollTrigger)
 
             gsap.registerPlugin(ScrollTrigger);
 
@@ -39,7 +37,7 @@ const About = () => {
                     start: 0,
                     end: '+=50%',
                     scrub: true,
-                    // scroller: "#main-container",
+                    scroller: "#main-container",
                     lazy: false  
                     }
                 })
@@ -52,7 +50,7 @@ const About = () => {
                     start: 0,
                     end: '+=50%',
                     scrub: true,
-                    // scroller: "#main-container",
+                    scroller: "#main-container",
                     lazy: false  
                     }
                 })
@@ -66,7 +64,7 @@ const About = () => {
                     start: 0,
                     end: '+=50%',
                     scrub: true,
-                    // scroller: "#main-container",
+                    scroller: "#main-container",
                     lazy: false  
                 }
                 })
