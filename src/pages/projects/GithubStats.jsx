@@ -12,15 +12,13 @@ const GithubStats = () => {
     const [githubData, setGithubData] = useState();
     const [githubRepos, setGithubRepos] = useState();
 
-    const [page, setPage] = useState(1);
-
     const containerRef = useRef();
     const repoRef = useRef();
 
     const params = new URLSearchParams({
         sort: 'created',
         per_page: 10,
-        page: page
+        page: 1
     })
 
     useEffect(() => {
@@ -93,19 +91,19 @@ const GithubStats = () => {
 
         return () => ctx.revert();
 
-    }, [])
+    }, [params])
 
     return (
         <>
             <div className={`${styles.container}`} ref={containerRef} style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"}}>
                 <div className={`row ${styles.githubInfoContainer}`}>
                     <div className="col-12 col-md-4">
-                        <img src={githubData && githubData.avatar_url} alt="Profile Picture" className={styles.githubAvatar} id="githubAvatar"/>
+                        <img src={githubData && githubData.avatar_url} alt="Profile" className={styles.githubAvatar} id="githubAvatar"/>
                     </div>
                     <div className="col-12 col-md-4" id="githubInfoWrapper">
                         <h1>{githubData && githubData.name}</h1>
                         <p>{githubData && githubData.bio}</p>
-                        <a href="https://github.com/YusufNergiz" target="_blank"><button className={styles.githubButton} role="button" ><span className={styles.text}>Check out my Github Page</span><span>Yusuf Nergiz</span></button></a>
+                        <a href="https://github.com/YusufNergiz" target="_blank" rel="noreferrer"><button className={styles.githubButton}><span className={styles.text}>Check out my Github Page</span><span>Yusuf Nergiz</span></button></a>
                         <div className={styles.githubLocationContainer}>
                             <h5>📍  {githubData && githubData.location}</h5>
                         </div>

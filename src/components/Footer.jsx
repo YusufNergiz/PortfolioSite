@@ -1,9 +1,7 @@
 import gsap, { Power4 } from "gsap";
 import React from "react";
-import { useState } from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import ContactForm from "./ContactForm";
 import styles from "./styles.module.css";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -49,8 +47,8 @@ const Footer = () => {
                             <a href="/skills"><h1>Skills</h1></a>
                             <a href="/resume"><h1>Resume</h1></a>
                             <div className="d-flex gap-3">
-                                <a href="https://www.linkedin.com/in/yussuf-nergiz" target="_blank"><h3>Linkedin</h3></a>
-                                <a href="https://github.com/YusufNergiz" target="_blank"><h3>Github</h3></a>
+                                <a href="https://www.linkedin.com/in/yussuf-nergiz" target="_blank" rel="noreferrer"><h3>Linkedin</h3></a>
+                                <a href="https://github.com/YusufNergiz" target="_blank" rel="noreferrer"><h3>Github</h3></a>
                                 <a href="mailto:yusufyn04@gmail.com"><h3>Email</h3></a>
                             </div>
                         </div>

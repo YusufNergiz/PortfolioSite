@@ -35,7 +35,7 @@ const GithubRepo = ({name, description, html_url, stargazersCount, watchersCount
 
     return (
         <div className={styles.repo} ref={repoRef}>
-            <a href={html_url} target="_blank"><h3>{name}</h3></a>
+            <a href={html_url} target="_blank" rel="noreferrer"><h3>{name}</h3></a>
             <p>{description}</p>
             <div className={styles.repoInfo}>
                 <div><FaStar />  {stargazersCount}</div>

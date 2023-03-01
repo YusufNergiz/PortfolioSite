@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
-import { gsap, Power4 } from "gsap";
+import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useEffect } from "react";
@@ -25,8 +25,6 @@ const About = () => {
         useEffect(() => {
 
             gsap.registerPlugin(ScrollTrigger);
-
-            const myText = new SplitType("#textBox")
             
             const ctx = gsap.context(() => {
                 gsap.fromTo('#curtainTop', {

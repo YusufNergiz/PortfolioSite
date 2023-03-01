@@ -1,6 +1,5 @@
 import gsap from "gsap";
 import React, { useLayoutEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 const Navbar = () => {
@@ -12,6 +11,9 @@ const Navbar = () => {
             gsap.timeline()
             .fromTo("#navLink", {duration: 2, opacity: 0}, {opacity: 1})
         }, navbarRef)
+
+        return () => ctx.revert();
+
     }, [])
 
     return (

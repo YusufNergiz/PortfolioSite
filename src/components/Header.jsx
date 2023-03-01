@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./styles.module.css";
 import SplitText from "../utils/Split3.min.js";
 
@@ -8,8 +8,7 @@ const Header = ({headerText}) => {
     useEffect(() => {
         const header = new SplitText("#headerText", {type: "lines", linesClass: "lineText"})
 
-        const headerParent = new SplitText("#headerText", {type: "lines", linesClass: "lineTextParent"})
-
+        new SplitText("#headerText", {type: "lines", linesClass: "lineTextParent"})
 
         gsap.to(header.lines, {
             duration: 1,

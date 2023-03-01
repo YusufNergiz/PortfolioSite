@@ -1,5 +1,5 @@
 import gsap, { Power4 } from 'gsap';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useRef } from 'react';
 import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';

@@ -30,7 +30,7 @@ const Experience = () => {
         gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {
-          const tl = gsap.timeline()
+          gsap.timeline()
             .from("#experienceInfo", {
               yPercent: 100,
               duration: 1,

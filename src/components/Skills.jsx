@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.css";
-import myImage from "../images/HC.jpg";
 import gsap, {Power4} from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 

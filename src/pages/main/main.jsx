@@ -32,6 +32,7 @@ const Main = () => {
     // PageTransitionText
     const [pageTransitionText, setPageTransitionText] = useState("Hi, Im Yussuf ✌");
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const randomShapeSelector = () => {
 
         // Function to get a random number
@@ -74,7 +75,7 @@ const Main = () => {
 
     useEffect(() => {
         randomShapeSelector();
-    }, [count])
+    }, [count, randomShapeSelector])
 
     // Gsap Animations
 
@@ -89,6 +90,8 @@ const Main = () => {
             .fromTo(".wrapper", {duration: 1, opacity: 0, y: 100}, {opacity: 1, y: 0, ease: Power4.easeInOut})
             .fromTo("#squirrel", {duration: 1, opacity: 0, y: -100}, {opacity: 1, y: 0, ease: Power4.easeInOut})
         }, loadingPageRef)
+
+        return () => ctx.revert();
 
     }, [])
 
@@ -113,7 +116,7 @@ const Main = () => {
     }
 
     const navigateToPage = (url, transitionText) => {
-        const ctx = gsap.context(() => {
+        gsap.context(() => {
             setPageTransitionText(transitionText)
             gsap.timeline()
             .fromTo("#pageTransitionCream", {duration: 2.2, scaleX: 0}, {scaleX: 1, transformOrigin:'left', ease: Power4.easeInOut},)
