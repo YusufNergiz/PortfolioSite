@@ -29,20 +29,25 @@ const About = () => {
             const myText = new SplitType("#textBox")
             
             const ctx = gsap.context(() => {
-                gsap.to('#curtainTop', {
-                    y: "50vh",
-                    ease: 'none',
-                    scrollTrigger: {
-                    trigger : '#main',
-                    start: 0,
-                    end: '+=50%',
-                    scrub: true,
-                    scroller: "#main-container",
-                    lazy: false  
+                gsap.fromTo('#curtainTop', {
+                    y: "-50vh"
+                    }, {
+                        y: "50vh",
+                        ease: 'none',
+                        scrollTrigger: {
+                        trigger : '#main',
+                        start: 0,
+                        end: '+=50%',
+                        scrub: true,
+                        scroller: "#main-container",
+                        lazy: false 
                     }
                 })
     
                 gsap.to('#curtainBottom', {
+                    y: "50vh"
+                },
+                {
                     y: 0,
                     ease: 'none',
                     scrollTrigger: {
