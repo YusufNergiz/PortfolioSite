@@ -58,7 +58,9 @@ const Experience = () => {
             
         }, experienceContainerRef);
       
-        return () => ctx.revert();
+        return () => {
+            ctx.revert()
+        };
       }, []);
     
     return (

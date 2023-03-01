@@ -24,10 +24,10 @@ function Tv() {
   </main>
   <div className={styles.speaker}></div>
   <div className={styles.volume}>
-    <input type="range" min="0" max="100" value="0" />
+    <input type="range" min="0" max="100"/>
   </div>
   <nav className={styles.channel}>
-    <input type="range" min="0" max="100" value="0" />
+    <input type="range" min="0" max="100"/>
   </nav>
   <nav className={styles.power}>
     <button onClick={handleClick}></button>

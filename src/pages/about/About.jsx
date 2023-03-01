@@ -39,7 +39,7 @@ const About = () => {
                     }
                 })
     
-                gsap.to('#curtainBottom', {
+                gsap.fromTo('#curtainBottom', {
                     y: "50vh"
                 },
                 {
@@ -69,7 +69,9 @@ const About = () => {
                 }
                 })
             })
-            return () => ctx.revert();
+            return () => {
+                ctx.revert()
+            };
         })
 
 

@@ -74,7 +74,9 @@ const Skills = () => {
             })
 
         }, skillsContainerRef)
-        return () => ctx.revert();
+        return () => {
+            ctx.revert()
+        };
     }, [])
 
     return (

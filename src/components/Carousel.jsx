@@ -64,8 +64,8 @@ function Carousel() {
     <div className={styles.carouselContainerProjects}>
         <div className={styles.projectContainerProjects}>
             <Slider {...settings}>
-                {projectList.map(project => (
-                    <a href={project.url} target="_blank" rel="noreferrer">
+                {projectList.map((project, index) => (
+                    <a href={project.url} target="_blank" rel="noreferrer" key={index}>
                         <div className={styles.project}>
                         <h1 className='mt-5'>{project.title}</h1>
                         <img src={project.image} alt="Project" />

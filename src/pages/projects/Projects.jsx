@@ -99,13 +99,15 @@ const Projects = () => {
                     start: "center center",
                     end: "+=50%",
                     scroller: "#main-container",
-                    scrub: true
+                    scrub: 1
                 }
             })
 
         }, mainRef)   
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert()
+        };
 
     }, [])
 
@@ -130,8 +132,8 @@ const Projects = () => {
             <GithubStats/>
             <div style={{width: "100%", height: "100vh"}}>
                 <Slider { ...settings }>
-                    {projectList.map(project => (
-                        <div className={styles.projectContainer}>
+                    {projectList.map((project, index) => (
+                        <div className={styles.projectContainer} key={index}>
                             <a href={project.url} target="_blank" rel="noreferrer"><h1>{project.title}</h1></a>
                             <div className={styles.projectWrapper}>
                                 <img src={project.image} alt="Project" className={styles.projectImage}/>

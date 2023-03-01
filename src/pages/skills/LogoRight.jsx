@@ -26,7 +26,10 @@ const LogoRight = ({icon, description, color}) => {
             })
         }, mainRef)  
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert()
+            ScrollTrigger.killAll()
+        };
 
     }, [])
 

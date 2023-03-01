@@ -31,7 +31,9 @@ const AboutMeText = () => {
             })   
         }, containerRef)
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert()
+        };
     }, [])
 
 

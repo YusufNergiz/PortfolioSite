@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import styles from "./styles.module.css";
 import { gsap, Power4 } from "gsap";
 import { useNavigate } from "react-router-dom";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import {FaCube} from "react-icons/fa";
 
@@ -75,7 +76,11 @@ const Main = () => {
 
     useEffect(() => {
         randomShapeSelector();
-    }, [count, randomShapeSelector])
+    }, [count])
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+    }, [])
 
     // Gsap Animations
 
@@ -91,7 +96,10 @@ const Main = () => {
             .fromTo("#squirrel", {duration: 1, opacity: 0, y: -100}, {opacity: 1, y: 0, ease: Power4.easeInOut})
         }, loadingPageRef)
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert()
+            ScrollTrigger.killAll()
+        };
 
     }, [])
 

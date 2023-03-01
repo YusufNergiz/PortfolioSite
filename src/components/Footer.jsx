@@ -30,7 +30,9 @@ const Footer = () => {
             })
         }, footerRef)
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert()
+        };
 
     }, [])
 

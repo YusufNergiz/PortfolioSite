@@ -30,7 +30,9 @@ const GithubRepo = ({name, description, html_url, stargazersCount, watchersCount
             })
         }, repoRef)
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert()
+        };
     }, [])
 
     return (

@@ -41,7 +41,10 @@ const Skills = () => {
 
         }, mainRef)
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert()
+            ScrollTrigger.killAll()
+        };
 
     }, [])
 

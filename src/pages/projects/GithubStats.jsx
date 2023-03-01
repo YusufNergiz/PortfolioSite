@@ -90,7 +90,9 @@ const GithubStats = () => {
             })
         }, containerRef)
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert()
+        };
 
     }, [params])
 

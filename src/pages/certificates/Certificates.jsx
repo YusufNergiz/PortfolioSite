@@ -68,7 +68,10 @@ function Certificates() {
 
         }, mainRef)
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert()
+            ScrollTrigger.killAll()
+        };
 
     }, [])
 
@@ -86,8 +89,8 @@ function Certificates() {
                 <div style={{width: "100%", height: "100vh", background: "#212121", overflow: "hidden"}}>
                     <div>
                         <Slider { ...settings }>
-                            {certList.map(cert => (
-                                <div className='d-flex justify-content-center align-items-center' style={{background: "#212121"}}>
+                            {certList.map((cert, index) => (
+                                <div className='d-flex justify-content-center align-items-center' style={{background: "#212121"}} key={index}>
                                     <img src={cert} alt="Certificate"/>
                                 </div>
                             ))}
