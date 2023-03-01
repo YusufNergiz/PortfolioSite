@@ -1,7 +1,6 @@
-import gsap, { Power4 } from "gsap";
+import { gsap, ScrollTrigger, Power4 } from "gsap/all";
 import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.css";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 const LogoRight = ({icon, description, color}) => {
 

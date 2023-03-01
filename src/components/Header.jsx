@@ -1,4 +1,4 @@
-import gsap from "gsap";
+import { gsap } from "gsap/all";
 import React, { useEffect } from "react";
 import styles from "./styles.module.css";
 import SplitText from "../utils/Split3.min.js";

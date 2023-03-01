@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import styles from "./styles.module.css";
-import { gsap, Power4 } from "gsap";
+import { gsap, ScrollTrigger, Power4 } from "gsap/all";
 import { useNavigate } from "react-router-dom";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 import {FaCube} from "react-icons/fa";
 

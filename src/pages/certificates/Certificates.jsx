@@ -1,10 +1,9 @@
-import gsap, { Power4 } from 'gsap';
+import { gsap, ScrollTrigger, Power4 } from "gsap/all";
 import React, { useEffect } from 'react'
 import { useRef } from 'react';
 import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';
 import styles from "./styles.module.css";
-import ScrollTrigger from 'gsap/ScrollTrigger';
 
 import pythonCert from "../../images/pythonCert.jpg";
 import gitCert from "../../images/gitCert.png";

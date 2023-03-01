@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.css";
-import { gsap, Power4 } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { gsap, ScrollTrigger, Power4 } from "gsap/all";
 
 const Experience = () => {
 

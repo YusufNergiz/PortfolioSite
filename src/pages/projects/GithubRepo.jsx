@@ -2,8 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import { FaEye, FaStar } from "react-icons/fa";
 import { TbGitFork } from "react-icons/tb"
-import gsap, { Power4 } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { gsap, ScrollTrigger, Power4 } from "gsap/all";
 
 const GithubRepo = ({name, description, html_url, stargazersCount, watchersCount, forks}) => {
 

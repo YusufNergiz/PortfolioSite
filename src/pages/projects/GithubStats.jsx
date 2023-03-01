@@ -3,9 +3,8 @@ import React, { useRef, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import styles from "./styles.module.css";
 import {FaUsers, FaWindowRestore, FaUserFriends, FaXRay} from "react-icons/fa"
-import gsap, { Power4 } from "gsap";
+import { gsap, ScrollTrigger, Power4 } from "gsap/all";
 import GithubRepo from "./GithubRepo";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 const GithubStats = () => {
 

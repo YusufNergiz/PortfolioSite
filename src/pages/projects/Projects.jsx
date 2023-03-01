@@ -3,12 +3,11 @@ import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
 import { useEffect } from "react";
 import styles from "./styles.module.css";
-import gsap, { Power4 } from "gsap";
+import { gsap, ScrollTrigger, Power4 } from "gsap/all";
 import { useRef } from "react";
 import useLocoScroll from "../../hooks/useLocoScroll";
 import GithubStats from "./GithubStats";
 import Slider from "react-slick";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 import innLab from "../../images/innLab-mainPage.PNG"
 import alemMed from "../../images/alemmed-mainPage.PNG";

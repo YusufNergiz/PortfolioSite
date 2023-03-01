@@ -1,10 +1,9 @@
-import gsap, { Power4 } from "gsap";
+import { gsap, ScrollTrigger, Power4 } from "gsap/all";
 import React from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
 import ContactForm from "./ContactForm";
 import styles from "./styles.module.css";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 const Footer = () => {
 
