@@ -97,7 +97,6 @@ const Main = () => {
 
         return () => {
             ctx.revert()
-            ScrollTrigger.killAll()
         };
 
     }, [])

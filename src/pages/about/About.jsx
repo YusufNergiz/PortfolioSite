@@ -16,19 +16,21 @@ const About = () => {
         useLocoScroll();
 
         const mainRef = useRef();
+        const curtainTopRef = useRef();
+        const curtainBottomRef = useRef();
 
         useLayoutEffect(() => {
 
             gsap.registerPlugin(ScrollTrigger);
             
             const ctx = gsap.context(() => {
-                gsap.fromTo('#curtainTop', {
+                gsap.fromTo(curtainTopRef.current, {
                     y: "-50vh"
                     }, {
                         y: "50vh",
                         ease: 'none',
                         scrollTrigger: {
-                        trigger : '#main',
+                        trigger : mainRef.current,
                         start: 0,
                         end: '+=50%',
                         scrub: true,
@@ -37,14 +39,14 @@ const About = () => {
                     }
                 })
     
-                gsap.fromTo('#curtainBottom', {
+                gsap.fromTo(curtainBottomRef.current, {
                     y: "50vh"
                 },
                 {
                     y: 0,
                     ease: 'none',
                     scrollTrigger: {
-                    trigger : '#main',
+                    trigger : mainRef.current,
                     start: 0,
                     end: '+=50%',
                     scrub: true,
@@ -53,12 +55,12 @@ const About = () => {
                     }
                 })
     
-                gsap.to('#main', {
+                gsap.to(mainRef.current, {
                     opacity: 0,
                     zIndex: -1,
                     ease: 'none',
                     scrollTrigger: {
-                    trigger : '#main',
+                    trigger : mainRef.current,
                     start: 0,
                     end: '+=50%',
                     scrub: true,
@@ -76,8 +78,8 @@ const About = () => {
         return (
             <>
                 <div style={{position: "relative", overflow: "hidden"}}>
-                    <div className={styles.curtainTop} id="curtainTop"></div>
-                    <div className={styles.curtainBottom} id="curtainBottom"></div> 
+                    <div className={styles.curtainTop} id="curtainTop" ref={curtainTopRef}></div>
+                    <div className={styles.curtainBottom} id="curtainBottom" ref={curtainBottomRef}></div> 
                     <div className={styles.pageTransitionBlack} ref={mainRef} id="main">
                         <Navbar />
                         <Header headerText={"About Me"}/>

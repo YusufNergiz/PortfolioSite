@@ -1,5 +1,5 @@
-import { gsap, ScrollTrigger, Power4 } from "gsap/all";
-import React from "react";
+import { gsap, ScrollTrigger } from "gsap/all";
+import React, { useLayoutEffect } from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
 import ContactForm from "./ContactForm";
@@ -8,9 +8,10 @@ import styles from "./styles.module.css";
 const Footer = () => {
 
     const footerRef = useRef();
+    const footerCurtainRef = useRef();
 
 
-    useEffect(() => {
+    useLayoutEffect(() => {
 
         gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +19,7 @@ const Footer = () => {
             gsap.from("#footerCurtain", {
                 y: 0,
                 duration: 5,
-                ease: Power4.ease,
+                ease: "power4.ease",
                 scrollTrigger: {
                     trigger: footerRef.current,
                     start: "top center",
@@ -27,6 +28,7 @@ const Footer = () => {
                     scrub: true,
                 }
             })
+
         }, footerRef)
 
         return () => {
@@ -34,7 +36,6 @@ const Footer = () => {
         };
 
     }, [])
-
 
     // Navigation
 
@@ -55,7 +56,7 @@ const Footer = () => {
                         </div>
                         <div className="col-12 col-md-6"><ContactForm /></div>
                 </section>
-                <div className={styles.footerCurtain} id="footerCurtain"></div>
+                <div className={styles.footerCurtain} id="footerCurtain" ref={footerCurtainRef}></div>
            </div>
         </>
     );
