@@ -1,6 +1,5 @@
 import { gsap, ScrollTrigger, Power4 } from "gsap/all";
-import React from "react";
-import { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import { useRef } from "react";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
@@ -19,33 +18,33 @@ const Skills = () => {
 
     const mainRef = useRef();
 
-    useEffect(() => {
+    useLayoutEffect(() => {
 
-        gsap.registerPlugin(ScrollTrigger);
+            gsap.registerPlugin(ScrollTrigger);
 
-        const ctx = gsap.context(() => {
-            gsap.from("#curtain", {
-                duration: 10,
-                x: "-100vw",
-                ease: Power4.ease,
-                scrollTrigger: {
-                    trigger: mainRef.current,
-                    start: "top top",
-                    end: "bottom center",
-                    scrub: true,
-                    scroller: "#main-container",
-                    toggleActions: "play none none reverse"
-                }
-            })
+            const ctx = gsap.context(() => {
+                gsap.from("#curtain", {
+                    duration: 10,
+                    x: "-100vw",
+                    ease: Power4.ease,
+                    scrollTrigger: {
+                        trigger: mainRef.current,
+                        start: "top top",
+                        end: "bottom center",
+                        scrub: true,
+                        scroller: "#main-container",
+                        toggleActions: "play none none reverse"
+                    }
+                })
 
-        }, mainRef)
+            }, mainRef)
 
-        return () => {
-            ctx.revert()
-            ScrollTrigger.killAll()
-        };
+            return () => {
+                ctx.revert()
+                ScrollTrigger.killAll()
+            };
 
-    }, [])
+        }, [])
 
     return (
         <>

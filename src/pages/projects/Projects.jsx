@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
-import { useEffect } from "react";
 import styles from "./styles.module.css";
 import { gsap, ScrollTrigger, Power4 } from "gsap/all";
 import { useRef } from "react";
@@ -70,7 +69,7 @@ const Projects = () => {
         },
     ]
 
-    useEffect(() => {
+    useLayoutEffect(() => {
 
         gsap.registerPlugin(ScrollTrigger);
 

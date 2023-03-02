@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import styles from "./styles.module.css";
 import { gsap, ScrollTrigger } from "gsap/all";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import AboutMeText from "../../components/AboutMeText";
 import Experience from "../../components/Experience";
 import Skills from "../../components/Skills";
@@ -17,7 +17,7 @@ const About = () => {
 
         const mainRef = useRef();
 
-        useEffect(() => {
+        useLayoutEffect(() => {
 
             gsap.registerPlugin(ScrollTrigger);
             

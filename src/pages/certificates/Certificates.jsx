@@ -1,5 +1,5 @@
 import { gsap, ScrollTrigger, Power4 } from "gsap/all";
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 import { useRef } from 'react';
 import Header from '../../components/Header';
 import Navbar from '../../components/Navbar';
@@ -33,7 +33,7 @@ function Certificates() {
         pythonCert, gitCert, hackYeahCert, nodeCert
     ]
 
-    useEffect(() => {
+    useLayoutEffect(() => {
 
         gsap.registerPlugin(ScrollTrigger);
 
