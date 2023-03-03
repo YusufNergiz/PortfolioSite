@@ -3,7 +3,6 @@ import React, { useLayoutEffect } from "react";
 import { useRef } from "react";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
-import useLocoScroll from "../../hooks/useLocoScroll";
 import LogoLeft from "./LogoLeft";
 import LogoRight from "./LogoRight";
 import styles from "./styles.module.css";
@@ -14,7 +13,7 @@ import Footer from "../../components/Footer";
 
 const Skills = () => {
 
-    useLocoScroll();
+    // useLocoScroll();
 
     const mainRef = useRef();
 
@@ -32,7 +31,7 @@ const Skills = () => {
                         start: "top top",
                         end: "bottom center",
                         scrub: true,
-                        scroller: "#main-container",
+                        // scroller: "#main-container",
                         toggleActions: "play none none reverse"
                     }
                 })

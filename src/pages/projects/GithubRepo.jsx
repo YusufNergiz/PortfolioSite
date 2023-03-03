@@ -24,7 +24,7 @@ const GithubRepo = ({name, description, html_url, stargazersCount, watchersCount
                     start: "top center",
                     end: "bottom bottom",
                     scrub: 1,
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                 }
             })
         }, repoRef)

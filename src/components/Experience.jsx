@@ -50,7 +50,7 @@ const Experience = () => {
                 start: "top top",
                 end: "bottom+=300 center",
                 scrub: true,
-                scroller: "#main-container",
+                // scroller: "#main-container",
                 toggleActions: "play none none reverse",
               }
             })

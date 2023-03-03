@@ -4,7 +4,6 @@ import Navbar from "../../components/Navbar";
 import styles from "./styles.module.css";
 import { gsap, ScrollTrigger, Power4 } from "gsap/all";
 import { useRef } from "react";
-import useLocoScroll from "../../hooks/useLocoScroll";
 import GithubStats from "./GithubStats";
 import Slider from "react-slick";
 
@@ -17,7 +16,7 @@ import Footer from "../../components/Footer";
 
 const Projects = () => {
 
-    useLocoScroll();
+    // useLocoScroll();
 
     const mainRef = useRef();
 
@@ -83,7 +82,7 @@ const Projects = () => {
                     trigger: mainRef.current,
                     start: "center center",
                     end: "+=50%",
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                     scrub: true
                 }
             })
@@ -96,7 +95,7 @@ const Projects = () => {
                     trigger: mainRef.current,
                     start: "center center",
                     end: "+=50%",
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                     scrub: 1
                 }
             })

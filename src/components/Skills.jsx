@@ -25,7 +25,7 @@ const Skills = () => {
                         start: "top top",
                         end: "bottom bottom",
                         scrub: true,
-                        scroller: "#main-container",
+                        // scroller: "#main-container",
                         pin: true
                     }
                 })
@@ -40,7 +40,7 @@ const Skills = () => {
                         start: "top top",
                         end: "bottom bottom",
                         scrub: true,
-                        scroller: "#main-container"
+                        // scroller: "#main-container"
                     }
                 }, 5)
                 .from("#skillList", {
@@ -53,7 +53,7 @@ const Skills = () => {
                         start: "top top",
                         end: "bottom bottom",
                         scrub: true,
-                        scroller: "#main-container",
+                        // scroller: "#main-container",
                     }
                 }, 10)
                 .from("#skillList li", {
@@ -67,7 +67,7 @@ const Skills = () => {
                         start: "top top",
                         bottom: "bottom bottom",
                         scrub: true,
-                        scroller: "#main-container",
+                        // scroller: "#main-container",
                     }
                 }, 13)
             })

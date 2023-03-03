@@ -1,5 +1,5 @@
 import { gsap, ScrollTrigger } from "gsap/all";
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
 import ContactForm from "./ContactForm";
@@ -11,7 +11,7 @@ const Footer = () => {
     const footerCurtainRef = useRef();
 
 
-    useLayoutEffect(() => {
+    useEffect(() => {
 
         gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +24,7 @@ const Footer = () => {
                     trigger: footerRef.current,
                     start: "top center",
                     end: "bottom bottom",
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                     scrub: true,
                 }
             })

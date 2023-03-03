@@ -2,17 +2,15 @@ import gsap from "gsap/all";
 import React, { useLayoutEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useEffect } from "react";
 
 const Navbar = () => {
 
     const navbarRef = useRef();
 
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-    }, [])
-
     useLayoutEffect(() => {
+
+        gsap.registerPlugin(ScrollTrigger);
+
         const ctx = gsap.context(() => {
             gsap.timeline()
             .fromTo("#navLink", {duration: 2, opacity: 0}, {opacity: 1})

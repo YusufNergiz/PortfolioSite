@@ -5,7 +5,6 @@ import { useRef } from "react";
 import AboutMeText from "../../components/AboutMeText";
 import Experience from "../../components/Experience";
 import Skills from "../../components/Skills";
-import useLocoScroll from "../../hooks/useLocoScroll";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -13,7 +12,7 @@ import Tv from "./Tv";
 
 const About = () => {
 
-        useLocoScroll();
+        // useLocoScroll();
 
         const mainRef = useRef();
         const curtainTopRef = useRef();
@@ -34,7 +33,7 @@ const About = () => {
                         start: 0,
                         end: '+=50%',
                         scrub: true,
-                        scroller: "#main-container",
+                        // scroller: "#main-container",
                         lazy: false 
                     }
                 })
@@ -50,7 +49,7 @@ const About = () => {
                     start: 0,
                     end: '+=50%',
                     scrub: true,
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                     lazy: false  
                     }
                 })
@@ -64,7 +63,7 @@ const About = () => {
                     start: 0,
                     end: '+=50%',
                     scrub: true,
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                     lazy: false  
                 }
                 })

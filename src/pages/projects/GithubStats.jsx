@@ -56,7 +56,7 @@ const GithubStats = () => {
                     start: "top center",
                     end: "bottom bottom",
                     scrub: true,
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                 }
             })
 
@@ -70,7 +70,7 @@ const GithubStats = () => {
                     start: "top center",
                     end: "bottom bottom",
                     scrub: true,
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                 }
             })
 
@@ -84,7 +84,7 @@ const GithubStats = () => {
                     start: "top center",
                     end: "bottom bottom",
                     scrub: true,
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                 }
             })
         }, containerRef)
@@ -93,7 +93,7 @@ const GithubStats = () => {
             ctx.revert()
         };
 
-    }, [params])
+    }, [])
 
     return (
         <>

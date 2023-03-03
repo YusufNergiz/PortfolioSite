@@ -9,13 +9,12 @@ import pythonCert from "../../images/pythonCert.jpg";
 import gitCert from "../../images/gitCert.png";
 import hackYeahCert from "../../images/hackCert.jpg";
 import nodeCert from "../../images/nodeCert.png";
-import useLocoScroll from '../../hooks/useLocoScroll';
 import Slider from 'react-slick';
 import Footer from '../../components/Footer';
 
 function Certificates() {
 
-    useLocoScroll();
+    // useLocoScroll();
 
     const mainRef = useRef();
 
@@ -46,7 +45,7 @@ function Certificates() {
                     trigger: mainRef.current,
                     start: "center center",
                     end: "+=50%",
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                     scrub: true,
                 }
             })
@@ -60,7 +59,7 @@ function Certificates() {
                     start: "top top",
                     end: "+=50%",
                     scrub: true,
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                     toggleActions: "play none none reverse",
                 }
             })

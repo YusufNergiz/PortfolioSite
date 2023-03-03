@@ -22,7 +22,7 @@ const LogoLeft = ({icon, description, color}) => {
                     start: "top center",
                     end: "bottom bottom",
                     scrub: 1,
-                    scroller: "#main-container",
+                    // scroller: "#main-container",
                 }
             })
         }, mainRef)  
