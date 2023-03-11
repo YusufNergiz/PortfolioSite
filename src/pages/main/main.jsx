@@ -75,7 +75,7 @@ const Main = () => {
 
     useEffect(() => {
         randomShapeSelector();
-    }, [count])
+    }, [count, randomShapeSelector])
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
