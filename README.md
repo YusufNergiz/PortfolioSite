@@ -1,5 +1,5 @@
 # Portfolio Website
 
-https://portfolio-site-4vot-a4u92xrhv-yusufnergiz.vercel.app/
+https://portfolio-site-4vot-yusufnergiz.vercel.app
 
 ![](images/Capture.PNG)
