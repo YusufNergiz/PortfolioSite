@@ -20,7 +20,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  scroll-behavior: initial;
 }
 
 :root {
@@ -35,6 +35,10 @@
 body {
   background: #EBF8EB;
   font-size: 1.6rem;
+}
+
+h1, p, h3, h5 {
+  z-index: 3;
 }
 
 iframe {

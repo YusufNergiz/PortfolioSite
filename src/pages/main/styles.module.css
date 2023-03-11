@@ -456,7 +456,7 @@
 
 .pageTransitionLogo {
   text-transform: uppercase;
-  font-family: sans-serif;
+  font-family: var(--main-font-family);
   font-size: 6rem;
   position: absolute;
   z-index: 1;

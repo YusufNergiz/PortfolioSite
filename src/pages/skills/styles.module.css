@@ -12,6 +12,7 @@
     height: 50vh;
     width: 100%;
     position: relative;
+    padding: 0;
 }
 
 .skillContainer h5, h1 {
@@ -19,20 +20,24 @@
     color: white;
     font-weight: 600;
     text-align: center;
+    z-index: 3;
 }
 
 .skillContainer h5 {
     font-size: 5rem;
+    z-index: 3;
 }
 
 .skillContainer h1 {
-    font-size: 20rem;
+    font-size: 40vh;
     transform: translateX(0);
+    z-index: 3;
 }
 
 @media only screen and (max-width: 1000px) {
     .skillContainer {
         border-bottom: 2px solid white;
+        height: 100vh;
     }
 
     .skillContainer h5 {

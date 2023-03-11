@@ -10,6 +10,7 @@ import styles from "./styles.module.css";
 import {FaReact, FaAngular, FaNodeJs, FaBootstrap, FaGitAlt} from "react-icons/fa"
 import { SiExpress, SiFirebase, SiMongodb, SiRedux, SiTailwindcss, SiTypescript, SiGreensock} from "react-icons/si"
 import Footer from "../../components/Footer";
+import MouseBlob from "../../components/MouseBlob";
 
 const Skills = () => {
 
@@ -48,6 +49,7 @@ const Skills = () => {
     return (
         <>
             <div style={{position: "relative", overflow: "hidden"}}>
+                <MouseBlob />
                 <div style={{position: "relative", overflow: "hidden", height: "100vh"}} ref={mainRef}>
                     <div className={styles.curtain} id="curtain"></div>
                     <div className={styles.pageTransitionBlack} id="main">

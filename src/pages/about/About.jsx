@@ -8,7 +8,7 @@ import Skills from "../../components/Skills";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Tv from "./Tv";
+import MouseBlob from "../../components/MouseBlob";
 
 const About = () => {
 
@@ -76,22 +76,21 @@ const About = () => {
 
         return (
             <>
-                <div style={{position: "relative", overflow: "hidden"}}>
-                    <div className={styles.curtainTop} id="curtainTop" ref={curtainTopRef}></div>
-                    <div className={styles.curtainBottom} id="curtainBottom" ref={curtainBottomRef}></div> 
-                    <div className={styles.pageTransitionBlack} ref={mainRef} id="main">
-                        <Navbar />
-                        <Header headerText={"About Me"}/>
+                <div>
+                    <MouseBlob />
+                    <div style={{position: "relative", overflow: "hidden"}}>
+                        <div className={styles.curtainTop} id="curtainTop" ref={curtainTopRef}></div>
+                        <div className={styles.curtainBottom} id="curtainBottom" ref={curtainBottomRef}></div> 
+                        <div className={styles.pageTransitionBlack} ref={mainRef} id="main">
+                            <Navbar />
+                            <Header headerText={"About Me"}/>
+                        </div>
                     </div>
+                    <AboutMeText />
+                    <Skills />
+                    <Experience />
+                    <Footer />
                 </div>
-                <AboutMeText />
-                <div style={{height: "100vh", width: "100%", position: "relative", background: "#212121"}}>
-                    <h1 className={styles.tvHeader}>Check out some of my Projects</h1>
-                    <Tv />
-                </div>
-                <Skills />
-                <Experience />
-                <Footer />
             </>
         );
     }

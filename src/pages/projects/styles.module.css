@@ -162,6 +162,7 @@
     margin-block: 1rem;
     position: relative;
     transform: translateY(0);
+    overflow: hidden;
 }
 
 .repo a {
@@ -212,6 +213,7 @@
     background: #212121;
     position: relative;
     padding-block: 5rem;
+    cursor: grab;
 }
 
 .projectWrapper {

@@ -11,6 +11,7 @@ import hackYeahCert from "../../images/hackCert.jpg";
 import nodeCert from "../../images/nodeCert.png";
 import Slider from 'react-slick';
 import Footer from '../../components/Footer';
+import MouseBlob from "../../components/MouseBlob";
 
 function Certificates() {
 
@@ -76,6 +77,7 @@ function Certificates() {
   return (
     <>
         <div style={{overflow: "hidden"}}>
+            <MouseBlob />
             <div className={styles.certContainer} ref={mainRef}>
                 <div className="position-realtive vh-100 w-100">
                     <div className={styles.curtain} id="curtain"></div>

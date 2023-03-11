@@ -13,6 +13,7 @@ import mazmun from "../../images/mazmun-mainPage.png";
 import mugalim from "../../images/mugalim-mainPage.PNG";
 import ytbClone from "../../images/ytbClone.PNG";
 import Footer from "../../components/Footer";
+import MouseBlob from "../../components/MouseBlob";
 
 const Projects = () => {
 
@@ -23,7 +24,7 @@ const Projects = () => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 300,
+        speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
@@ -111,36 +112,38 @@ const Projects = () => {
     return (
         <>
             <div>
-                <div className="position-realtive vh-100 w-100" ref={mainRef}>
-                    <div id="header" style={{opacity: 0, height: "100vh"}}>
-                        <Navbar />
-                        <Header headerText={"My projects"}/>
-                    </div>
-                    <div className="d-flex" style={{background: "#212121"}}>
-                        <div className={styles.curtain} id="curtain"></div>
-                        <div className={styles.curtain} id="curtain"></div>
-                        <div className={styles.curtain} id="curtain"></div>
-                        <div className={styles.curtain} id="curtain"></div>
-                        <div className={styles.curtain} id="curtain"></div>
+                <MouseBlob />
+                <div style={{overflow: "hidden"}}>
+                    <div className="position-realtive vh-100 w-100" ref={mainRef}>
+                        <div id="header" style={{opacity: 0, height: "100vh"}}>
+                            <Navbar />
+                            <Header headerText={"My projects"}/>
+                        </div>
+                        <div className="d-flex" style={{background: "#212121"}}>
+                            <div className={styles.curtain} id="curtain"></div>
+                            <div className={styles.curtain} id="curtain"></div>
+                            <div className={styles.curtain} id="curtain"></div>
+                            <div className={styles.curtain} id="curtain"></div>
+                            <div className={styles.curtain} id="curtain"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div style={{height: "30vh"}}></div>
-            <GithubStats/>
-            <div style={{width: "100%", height: "100vh"}}>
-                <Slider { ...settings }>
-                    {projectList.map((project, index) => (
-                        <div className={styles.projectContainer} key={index}>
-                            <a href={project.url} target="_blank" rel="noreferrer"><h1>{project.title}</h1></a>
-                            <div className={styles.projectWrapper}>
-                                <img src={project.image} alt="Project" className={styles.projectImage}/>
-                                <p className="mt-3">{project.description}</p>
+                <GithubStats/>
+                <div style={{width: "100%", height: "100vh", overflow: "hidden"}}>
+                    <Slider { ...settings }>
+                        {projectList.map((project, index) => (
+                            <div className={styles.projectContainer} key={index}>
+                                <a href={project.url} target="_blank" rel="noreferrer"><h1>{project.title}</h1></a>
+                                <div className={styles.projectWrapper}>
+                                    <img src={project.image} alt="Project" className={styles.projectImage}/>
+                                    <p className="mt-3">{project.description}</p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </Slider>
+                        ))}
+                    </Slider>
+                </div>
+                <Footer />
             </div>
-            <Footer />
         </>
     );
 }

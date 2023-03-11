@@ -30,7 +30,7 @@ const Main = () => {
     })
 
     // PageTransitionText
-    const [pageTransitionText, setPageTransitionText] = useState("Hi, Im Yussuf ✌");
+    const [pageTransitionText, setPageTransitionText] = useState("Main Page");
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const randomShapeSelector = () => {

@@ -1,10 +1,33 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import { gsap, ScrollTrigger, Power4 } from "gsap/all";
+import Slider from "react-slick";
 
 const Skills = () => {
 
     const skillsContainerRef = useRef(null);
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true
+      };
+
+    const frameworks = [
+        "React.js",
+        "Angular",
+        "Node.js",
+        "GSAP",
+        "Express.js",
+        "Redux",
+        "Tailwind CSS",
+        "Mongo DB",
+        "Firebase",
+        "Bootstrap"
+    ]
 
     useEffect(() => {
 
@@ -87,35 +110,42 @@ const Skills = () => {
                         <h1 id="skillImageText">my Skills</h1>
                     </div>
                     <div className={`${styles.skillsList} row`} id="skillList">
-                        <div className="col-12 col-md-4">
+                        <div className="col-12 d-flex justify-content-center align-items-center flex-column">
                             <h3>LANGUAGES</h3>
-                            <ul>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>Vanilla Javascript</li>
-                                <li>Python</li>
-                                <li>Java</li>
-                                <li>C#</li>
-                            </ul>
+                            <div className={styles.slider}>
+                                <Slider {...settings}>
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <h3>HTML</h3>
+                                </div>
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <h3>CSS</h3>
+                                </div>
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <h3>Vanilla Javascript</h3>
+                                </div>
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <h3>Python</h3>
+                                </div>
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <h3>Java</h3>
+                                </div>
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <h3>C#</h3>
+                                </div>
+                                </Slider>
+                            </div>
                         </div>
 
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 d-flex justify-content-center align-items-center flex-column">
                             <h3>FRAMEWORKS/LIBRARIES/OTHERS</h3>
-                            <div className="row">
-                                <ul className="col-6">
-                                    <li>React.js</li>
-                                    <li>Angular</li>
-                                    <li>Node.js</li>
-                                    <li>GSAP</li>
-                                    <li>Express.js</li>
-                                    <li>Redux</li>
-                                </ul>
-                                <ul className="col-6">
-                                    <li>Tailwind CSS</li>
-                                    <li>Mongo DB</li>
-                                    <li>Firebase</li>
-                                    <li>Bootstrap</li>
-                                </ul>
+                            <div className={styles.slider}>
+                                <Slider {...settings}>
+                                {frameworks.map((framework, index) => (
+                                    <div className="d-flex justify-content-center align-items-center" key={index}>
+                                        <h3>{framework}</h3>
+                                    </div>
+                                ))}
+                                </Slider>
                             </div>
                         </div>
                     </div>

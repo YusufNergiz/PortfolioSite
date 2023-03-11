@@ -27,7 +27,7 @@ const Header = ({headerText}) => {
                 <li><a href="/projects">Projects</a></li>
             </ul>
             <div style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%"}}>
-                <h1 id="headerText" style={{color: "#212121"}}>{headerText}</h1>
+                <h1 id="headerText" style={{color: "#212121", fontSize: "15vw", position: "relative", zIndex: 2}}>{headerText}</h1>
             </div>
         </section>
     );
