@@ -75,7 +75,8 @@ const Main = () => {
 
     useEffect(() => {
         randomShapeSelector();
-    }, [count, randomShapeSelector])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [count])
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
