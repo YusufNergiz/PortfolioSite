@@ -13,7 +13,8 @@ const Skills = () => {
         speed: 1000,
         slidesToShow: 2,
         slidesToScroll: 1,
-        autoplay: true
+        autoplay: true,
+        
       };
 
     const frameworks = [
